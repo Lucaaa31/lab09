@@ -45,6 +45,33 @@ public class BadIOGUI {
         canvas.add(write, BorderLayout.CENTER);
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Ex 01.01
+        final JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+        frame.setContentPane(panel);
+        panel.add(write);
+
+        // Ex 01.02
+        JButton read = new JButton("Read");
+        panel.add(read);
+        read.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try {
+                    List<String> file = Files.readAllLines(new File(PATH).toPath());
+                    for (String line : file) {
+                        System.out.println(file);
+                    }
+                } catch (IOException e1) {
+                    
+                }
+                
+            }
+            
+        });
+
         /*
          * Handlers
          */
@@ -87,6 +114,7 @@ public class BadIOGUI {
          * on screen. Results may vary, but it is generally the best choice.
          */
         frame.setLocationByPlatform(true);
+        frame.pack();
         /*
          * OK, ready to push the frame onscreen
          */
