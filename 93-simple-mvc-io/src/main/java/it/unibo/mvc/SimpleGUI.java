@@ -59,8 +59,4 @@ public final class SimpleGUI {
     }
 
 
-    private static SimpleGUI SimpleGUI() {
-        return null;
-    }
-
 }
