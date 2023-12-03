@@ -33,7 +33,7 @@ public final class SimpleGUI {
 
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                Controller controller = new Controller();
+                
                 
 
                 controller.currentFile(file);
